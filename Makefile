@@ -2,6 +2,7 @@ package = nyancat
 version = 1.5.2
 tarname = $(package)
 distdir = $(tarname)-$(version)
+prefix = /data/data/com.termux/files/usr
 
 all clean check nyancat:
 	cd src && $(MAKE) $@
@@ -33,7 +34,7 @@ distcheck: $(distdir).tar.gz
 	@echo "*** Package $(distdir).tar.gz is ready for distribution."
 
 install: all
-	install src/nyancat /usr/bin/${package}
-	gzip -9 -c < nyancat.1 > /usr/share/man/man1/nyancat.1.gz
+	install src/nyancat $(distdir)$(prefix)/bin/${package}
+	gzip -9 -c < nyancat.1 > $(distdir)$(prefix)/share/man/man1/nyancat.1.gz
 
 .PHONY: FORCE all clean check dist distcheck install
