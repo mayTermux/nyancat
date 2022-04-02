@@ -34,7 +34,7 @@ distcheck: $(distdir).tar.gz
 	@echo "*** Package $(distdir).tar.gz is ready for distribution."
 
 install: all
-	install src/nyancat $(distdir)$(prefix)/bin/${package}
-	gzip -9 -c < nyancat.1 > $(distdir)$(prefix)/share/man/man1/nyancat.1.gz
+	install src/nyancat $(destdir)$(prefix)/bin/${package}
+	gzip -9 -c < nyancat.1 > $(destdir)$(prefix)/share/man/man1/nyancat.1.gz
 
 .PHONY: FORCE all clean check dist distcheck install
