@@ -630,7 +630,7 @@ int main(int argc, char ** argv) {
 
 	switch (ttype) {
 		case 1:
-			colors[',']  = "\033[48;5;17m";  /* Blue background */
+			colors[',']  = "\033[49m";  /* Blue background */
 			colors['.']  = "\033[48;5;231m"; /* White stars */
 			colors['\''] = "\033[48;5;16m";  /* Black border */
 			colors['@']  = "\033[48;5;230m"; /* Tan poptart */
